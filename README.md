@@ -1,1 +1,1 @@
-# Event-Booking-API
+# Event-App-API

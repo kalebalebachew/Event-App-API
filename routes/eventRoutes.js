@@ -10,8 +10,8 @@ const {
       } = require('../controllers/eventController')
 
 
-app.route('/').get(getEvents).post(setEvent)
-app.route('/:id').put(updateEvent).delete(deleteEvent)
+app.route('/').get(getEvents).post(setEvent).post(bookEvent)
+app.route('/:eventId').put(updateEvent).delete(deleteEvent).put(cancelEvent)
 
 
 module.exports = app

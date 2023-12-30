@@ -8,6 +8,9 @@ const port = process.env.PORT || 5000
 db()
 
 
+app.use('/api/events', require('./routes/eventRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
+
 
 
 

@@ -10,7 +10,7 @@ const {
       } = require('../controllers/eventController')
 
 
-app.route('/').get(getEvents).post(setEvent).post(bookEvent)
+app.route('/').get(getEvents).post(createEvent).post(bookEvent)
 app.route('/:eventId').put(updateEvent).delete(deleteEvent).put(cancelEvent)
 
 

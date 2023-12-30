@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const User = require('../models/userModel')
-const { findOne } = require('../models/eventModel')
+const Event = require('../models/eventModel')
 
 
 //Registering a User 

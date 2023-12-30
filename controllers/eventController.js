@@ -28,8 +28,36 @@ const createEvent = asyncHandler(async (req,res) =>{
 
 //
 const bookEvent = asyncHandler(async (req,res) =>{
+   
+  const { title, date, ticketQuantity } = req.body;
+
+
+  const totalAmount = ticketQuantity * YOUR_TICKET_PRICE;
+
+
+  const paymentData = {
+    amount: totalAmount.toString(),
+    currency: 'ETB',
+    email: req.user.email, 
+    name: req.user.name
     
+  };
+
+  try {
+    if(!paymentData){
+        res.status(400).json({message: 'add your payment data'})
+    }
     
+    await paymentController.initiatePayment(paymentData);
+
+  
+    res.status(200).json({ success: true, message: 'Event booking initiated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Error initiating event booking' });
+  }
+
+
 })
 const updateEvent = asyncHandler(async (req,res) =>{
     

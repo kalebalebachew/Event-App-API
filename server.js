@@ -16,4 +16,4 @@ app.use('/api/payment',require('routes/paymentRoutes'))
 
 
 
-app.listen(port, () => console.log(`server running on port ${port}`))
+app.listen(port, () => console.log(`Server running on port ${port}`))
